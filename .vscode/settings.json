@@ -1,0 +1,24 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "python.languageServer": "Pylance",
+    "editor.formatOnSaveMode": "modifications",
+    "autoDocstring.docstringFormat": "sphinx",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": true
+    },
+    "markdownlint.config": {
+        "default": true,
+        "MD040": false
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ],
+        "editor.wordBasedSuggestions": false
+    },
+}

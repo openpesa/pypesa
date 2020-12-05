@@ -1,0 +1,18 @@
+site_name: PyPesa Docs
+
+theme: readthedocs
+
+nav:
+  - Introduction: index.md
+  - Vodacom M-Pesa: vodacom.md
+
+repo_name: GitHub
+
+repo_url: https://github.com/openpesa/pypesa.git
+
+site_description:
+
+markdown_extensions:
+  - admonition
+
+copyright: Copyright &copy; 2020

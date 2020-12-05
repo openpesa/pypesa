@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pypesa"
+version = "0.0.1"
+description = "Python Implementation for Mobile payments integrations."
+authors = ["Innocent Zenda <zendainnocent@gmail.com>"]
+readme = 'README.md'
+repository = 'https://github.com/openpesa/pypesa.git'
+keywords = ['develpoment', 'online payments', 'mobile payments']
+classifiers = [
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.25.0"
+pycryptodome = "^3.9.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.1.2"
+mkdocs = "^1.1.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
