@@ -4,7 +4,10 @@ theme: readthedocs
 
 nav:
   - Introduction: index.md
+  - Getting Started: examples.md
   - Vodacom M-Pesa: vodacom.md
+  - Contributing: contributing.md
+  - Installation: installation.md
 
 repo_name: GitHub
 
