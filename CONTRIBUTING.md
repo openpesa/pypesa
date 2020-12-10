@@ -29,7 +29,7 @@ Now you have two remotes for this project:
 
 ## Get it working on your computer
 
-Now you have the source code, get it working on your computer by following instruction on [installation file](INSTALLATION.md).
+Now you have the source code, get it working on your computer by following instruction on [installation guide](INSTALLATION.md).
 
 If you get it working, but the documentation is unclear, then improving that bit should be your first PR to the project.
 
