@@ -4,7 +4,10 @@ vodacom.py
 This module contains the class for all M-Pesa transactions.
 """
 
-from .defaults import *
+from .defaults import (MPESA_B2BPAYMENT_URL, MPESA_B2CPAYMENT_URL,
+                       MPESA_BASE_URL, MPESA_C2BPAYMENT_URL,
+                       MPESA_GET_SESSION_URL, MPESA_REVERSAL_URL,
+                       MPESA_TRANSACTION_STATUS_URL)
 from .open_api import APIContext, APIMethodType, APIRequest
 
 BASE_URL = MPESA_BASE_URL
