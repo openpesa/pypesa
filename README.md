@@ -26,11 +26,12 @@ from pypesa.vodacom import MPESA
 
 ## Features
 
-- [x] Customer-to-business
-- [x] Business-to-customer
-- [x] Business-to-business
-- [x] Reversal
-- [x] Transaction status
+- [x] Customer to Business (C2B)
+- [x] Business to Customer (B2C)
+- [x] Business to Business (B2B)
+- [x] Payment Reversal
+- [x] Transaction Status
+- [] Direct debit creation and Payment
 
 ## Pre-requisites
 
@@ -38,6 +39,8 @@ The following are required and are obtained from [Vodacom Open Api portal](https
 
 - Api Key
 - Public Key
+
+See more in [documentation](https://pypesa.readthedocs.io/en/latest/).
 
 ## Examples
 
@@ -66,6 +69,8 @@ parameters = {
 
 response = m_pesa.customer2business(parameters)
 ```
+
+Check more examples of methods and responses in [docs](https://pypesa.readthedocs.io/en/latest/examples/)
 
 ## License
 
