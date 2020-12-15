@@ -181,7 +181,7 @@ results = m_pesa.business2business(parameters)
 
 ### Processing the results from API call
 
-The results of API call can be processed by checking the response code. More information check on [response codes](link).
+The results of API call can be processed by checking the response code. More information check on [response codes](https://openapiportal.m-pesa.com/api-documentation#ResponseCodes).
 
 Check response code by comparing `results.body[output_ResponseCode]` with known response codes. [Sample responses](../examples/#sample-responses)
 
