@@ -69,6 +69,11 @@ git checkout -b <branch-name>
 
 Make sure you commit in logical blocks. Each commit message should be sane. Check this [article](https://chris.beams.io/posts/git-commit/).
 
+Whenever possible, please include tests for the changes or feature you work on.
+
+!!!note
+    This package uses `pytest` for testing but feel free to use `unittest` if you are comfortable with it.
+
 ## Create the Pull Request (PR)
 
 Create a PR by pushing your branch to the _origin_ remote and then press some buttons on Github.
