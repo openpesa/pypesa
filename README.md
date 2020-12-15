@@ -72,6 +72,12 @@ response = m_pesa.customer2business(parameters)
 
 Check more examples of methods and responses in [docs](https://pypesa.readthedocs.io/en/latest/examples/)
 
+## Credits
+
+- [Openpesa](https://github.com/openpesa/)
+- [Innocent Zenda](https://github.com/ZendaInnocent)
+- [All Contributors](../../contributors)
+
 ## License
 
 Code released under [MIT LICENSE](https://github.com/openpesa/pypesa/blob/main/LICENSE)
