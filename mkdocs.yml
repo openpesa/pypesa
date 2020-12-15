@@ -5,6 +5,7 @@ theme: readthedocs
 nav:
   - Introduction: index.md
   - Getting Started: examples.md
+  - integration.md
   - Vodacom M-Pesa: vodacom.md
   - Contributing: contributing.md
   - Installation: installation.md
