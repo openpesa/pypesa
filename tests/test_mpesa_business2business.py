@@ -6,7 +6,7 @@ Testing common responses:
 
 from unittest.mock import patch
 
-from pypesa.defaults import *
+from pypesa.defaults import MPESA_API_KEY, MPESA_PUBLIC_KEY
 from pypesa.vodacom import MPESA
 
 from .samples import (duplicate_transaction_sample, parameters,

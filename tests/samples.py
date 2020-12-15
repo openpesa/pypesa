@@ -1,3 +1,5 @@
+SKIP_REAL = True
+
 """Sample of parameters and responses."""
 
 # Sample of parameters
