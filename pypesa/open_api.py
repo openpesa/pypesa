@@ -21,7 +21,7 @@ class APIRequest:
                     APIMethodType.POST: self.__post,
                     APIMethodType.PUT: self.__put
                 }.get(self.context.method_type, self.__unknown)()
-            except requests.exceptions.ConnectionError as ce:
+            except requests.exceptions.ConnectionError:
                 return None
         else:
             raise TypeError('Context cannot be None.')
