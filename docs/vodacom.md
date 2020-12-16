@@ -52,7 +52,9 @@ Args:
 - `path [string]`
 
     A URL for creating a session.
-    <!-- todo: add format of a URL -->
+
+    Format: `/[environment]/ipg/v2/[market]/getSession/`
+
     Defaults to `/sandbox/ipg/v2/vodacomTZN/getSession/`.
 
 !!!note
@@ -86,7 +88,9 @@ parameters = {
 - `path [string]`
 
     A URL for customer-to-business transaction.
-    <!-- todo: add format of a URL -->
+
+    Format: `/[environment]/ipg/v2/[market]/c2bPayment/singleStage/`
+
     Defaults to `/sandbox/ipg/v2/vodacomTZN/c2bPayment/singleStage/`
 
 ### `reversal()`
@@ -114,7 +118,9 @@ reversal_parameters = {
 - `path [string]`
 
     A URL for reversing a successful transaction.
-    <!-- todo: add format of a URL -->
+
+    Format: `/[environment]/ipg/v2/[market]/reversal/`
+
     Defaults to `/sandbox/ipg/v2/vodacomTZN/reversal/`
 
 ### `business2customer()`
@@ -145,7 +151,9 @@ parameters = {
 - `path [string]`
 
     A URL for business-to-customer transaction.
-    <!-- todo: add format of a URL -->
+
+    Format: `/[environment]/ipg/v2/[market]/b2cPayment/`
+
     Defaults to `/sandbox/ipg/v2/vodacomTZN/b2cPayment/`
 
 ### `business2business()`
@@ -176,8 +184,10 @@ parameters = {
 - `path [string]`
 
     A URL for business-to-business transaction.
-    <!-- todo: add format of a URL -->
-    Defaults to `/openapi/ipg/v2/vodacomTZN/b2bPayment/`
+
+    Format: `/[environment]/ipg/v2/[market]/b2bPayment/`
+
+    Defaults to `/sandbox/ipg/v2/vodacomTZN/b2bPayment/`
 
 ### `status()`
 
@@ -203,5 +213,24 @@ parameters = {
 - `path [string]`
 
     A URL for business-to-business transaction.
-    <!-- todo: add format of a URL -->
-    Defaults to `/openapi/ipg/v2/vodacomTZN/queryTransactionStatus/`
+
+    Format: `/[environment]/ipg/v2/[market]/queryTransactionStatus/`
+
+    Defaults to `/sandbox/ipg/v2/vodacomTZN/queryTransactionStatus/`
+
+## Default values
+
+Default values used for development.
+
+```
+MPESA_BASE_URL = 'openapi.m-pesa.com'
+MPESA_GET_SESSION_URL = '/sandbox/ipg/v2/vodacomTZN/getSession/'
+MPESA_C2BPAYMENT_URL = '/sandbox/ipg/v2/vodacomTZN/c2bPayment/singleStage/'
+MPESA_REVERSAL_URL = '/sandbox/ipg/v2/vodacomTZN/reversal/'
+MPESA_B2CPAYMENT_URL = '/sandbox/ipg/v2/vodacomTZN/b2cPayment/'
+MPESA_B2BPAYMENT_URL = '/openapi/ipg/v2/vodacomTZN/b2bPayment/'
+MPESA_TRANSACTION_STATUS_URL = '/openapi/ipg/v2/vodacomTZN/queryTransactionStatus/'
+```
+
+- [environment] - sandobox
+- [market] - vodacomTZN
