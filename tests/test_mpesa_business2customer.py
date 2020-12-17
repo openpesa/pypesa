@@ -1,4 +1,4 @@
-"""Test suite for testing VodaCom M-Pesa business-to-customer transaction
+"""Testing VodaCom M-Pesa Direct Debit Payment transaction
 Testing common responses:
 - successful transaction: status code 201
 - duplicate transaction: status code 409

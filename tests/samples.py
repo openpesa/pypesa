@@ -55,3 +55,95 @@ duplicate_transaction_sample = [{
              'output_TransactionID': 'N/A',
              'output_ConversationID': '47bbaba476494860a2c9be30678f4c1c', 'output_ThirdPartyConversationID': 'asv02e5958774f7ba228d83d0d689761'}
 }]
+
+# Direct debit creation
+# Successful transaction
+successful_debit_creation_response = [{
+    'status_code': 201,
+    'headers': {
+        'date': 'Wed, 16 Dec 2020 07:29:32 GMT',
+        'x-frame-options': 'SAMEORIGIN',
+        'x-robots-tag': 'none',
+        'x-content-type-options': 'nosniff',
+        'x-xss-protection': '1; mode=block',
+        'strict-transport-security': 'max-age=16005600; includeSubDomains',
+        'content-type': 'application/json',
+        'access-control-allow-origin': '*',
+        'content-length': '258', 'Vary': 'Accept-Encoding'
+    },
+    'body': {
+        'output_ResponseCode': 'INS-0',
+        'output_ResponseDesc': 'Request processed successfully',
+        'output_TransactionReference': '3333',
+        'output_ConversationID': '910b5ff71a6e4d939614cac74ae8c6d9',
+        'output_ThirdPartyConversationID': 'AAA6d1f9391a0052de0b5334a912jbsj1j2kk'
+    }
+}]
+
+duplicate_debit_creation_response = [{
+    'status_code': 409,
+    'headers': {
+        'date': 'Wed, 16 Dec 2020 07:29:32 GMT',
+        'x-frame-options': 'SAMEORIGIN',
+        'x-robots-tag': 'none',
+        'x-content-type-options': 'nosniff',
+        'x-xss-protection': '1; mode=block',
+        'strict-transport-security': 'max-age=16005600; includeSubDomains',
+        'content-type': 'application/json',
+        'access-control-allow-origin': '*',
+        'content-length': '258', 'Vary': 'Accept-Encoding'
+    },
+    'body': {
+        'output_ResponseCode': 'INS-10',
+        'output_ResponseDesc': 'Duplicate Transaction',
+        'output_TransactionReference': 'N/A',
+        'output_ConversationID': '5d2a711584aa40f1b800cb0db449f46d',
+        'output_ThirdPartyConversationID': 'AAA6d1f9391a0052de0b5334a912jbsj1j2kk'
+    }
+}]
+
+
+# Direct debit Payment
+# Successful transaction
+successful_debit_payment_response = [{
+    'status_code': 201,
+    'headers': {
+        'date': 'Wed, 16 Dec 2020 07:29:32 GMT',
+        'x-frame-options': 'SAMEORIGIN',
+        'x-robots-tag': 'none',
+        'x-content-type-options': 'nosniff',
+        'x-xss-protection': '1; mode=block',
+        'strict-transport-security': 'max-age=16005600; includeSubDomains',
+        'content-type': 'application/json',
+        'access-control-allow-origin': '*',
+        'content-length': '258', 'Vary': 'Accept-Encoding'
+    },
+    'body': {
+        'output_ResponseCode': 'INS-0',
+        'output_ResponseDesc': 'Request processed successfully',
+        'output_TransactionID': 'mjrDuvWtbfpw',
+        'output_ConversationID': '6a7163de90964bfe8a7afeeca974327e',
+        'output_ThirdPartyConversationID': 'AAA6d1f939c1005v2de053v4912jbasdj1j2kk'
+    }
+}]
+
+duplicate_debit_payment_response = [{
+    'status_code': 409,
+    'headers': {
+        'date': 'Wed, 16 Dec 2020 07:29:44 GMT',
+        'x-frame-options': 'SAMEORIGIN', 'x-robots-tag': 'none',
+        'x-content-type-options': 'nosniff',
+        'x-xss-protection': '1; mode=block',
+        'strict-transport-security': 'max-age=16005600; includeSubDomains',
+        'content-type': 'application/json',
+        'access-control-allow-origin': '*',
+        'content-length': '241', 'Vary': 'Accept-Encoding'
+    },
+    'body': {
+        'output_ResponseCode': 'INS-10',
+        'output_ResponseDesc': 'Duplicate Transaction',
+        'output_TransactionID': 'N/A',
+        'output_ConversationID': '18336c767c664b6d8a119eb3dada4922',
+        'output_ThirdPartyConversationID': 'AAA6d1f939c1005v2de053v4912jbasdj1j2kk'
+    }
+}]
