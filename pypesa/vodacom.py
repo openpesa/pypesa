@@ -6,8 +6,9 @@ This module contains the class for all M-Pesa transactions.
 
 from .defaults import (MPESA_B2BPAYMENT_URL, MPESA_B2CPAYMENT_URL,
                        MPESA_BASE_URL, MPESA_C2BPAYMENT_URL,
-                       MPESA_GET_SESSION_URL, MPESA_REVERSAL_URL,
-                       MPESA_TRANSACTION_STATUS_URL)
+                       MPESA_DIRECT_DEBIT_CREATE_URL,
+                       MPESA_DIRECT_DEBIT_PAYMENT_URL, MPESA_GET_SESSION_URL,
+                       MPESA_REVERSAL_URL, MPESA_TRANSACTION_STATUS_URL)
 from .open_api import APIContext, APIMethodType, APIRequest
 
 BASE_URL = MPESA_BASE_URL
@@ -17,6 +18,8 @@ reversal_url = MPESA_REVERSAL_URL
 b2cPayment_url = MPESA_B2CPAYMENT_URL
 b2bPayment_url = MPESA_B2BPAYMENT_URL
 transaction_status_url = MPESA_TRANSACTION_STATUS_URL
+direct_debit_create_url = MPESA_DIRECT_DEBIT_CREATE_URL
+direct_debit_payment_url = MPESA_DIRECT_DEBIT_PAYMENT_URL
 
 
 class MPESA:
@@ -247,7 +250,7 @@ class MPESA:
         :return: Response from API call.
         :rtype: dict
 
-        Example of paramters:
+        Example of parameters:
 
         parameters = {
             'input_QueryReference': '000000000000000000001',
@@ -259,6 +262,77 @@ class MPESA:
         self.context.update({
             'api_key': self.get_session_id(),
             'method_type': APIMethodType.GET,
+            'path': path,
+            'parameters': {k: v for k, v in parameters.items()}
+        })
+
+        response = self._get_api_response(self.context)
+        return response
+
+    def direct_debit_create(self, parameters: dict,
+                            path: str = direct_debit_create_url) -> dict:
+        """[summary]
+
+        :param parameters: [description]
+        :type parameters: dict
+        :param path: [description], defaults to create_direct_debit_url
+        :type path: str, optional
+        :return: [description]
+        :rtype: dict
+
+        Example of parameters:
+
+        parameters = {
+            "input_AgreedTC": "1",
+            "input_Country": "TZN",
+            "input_CustomerMSISDN": "000000000001",
+            "input_EndRangeOfDays": "22",
+            "input_ExpiryDate": "20211126",
+            "input_FirstPaymentDate": "20160324",
+            "input_Frequency": "06",
+            "input_ServiceProviderCode": "000000",
+            "input_StartRangeOfDays": "01",
+            "input_ThirdPartyConversationID": "AAA6d1f9391a0052de0b5334a912jbsj1j2kk",
+            "input_ThirdPartyReference": "3333"
+        }
+        """
+        self.context.update({
+            'api_key': self.get_session_id(),
+            'method_type': APIMethodType.POST,
+            'path': path,
+            'parameters': {k: v for k, v in parameters.items()}
+        })
+
+        response = self._get_api_response(self.context)
+        return response
+
+    def direct_debit_payment(self, parameters: dict,
+                             path: str = direct_debit_payment_url) -> dict:
+        """[summary]
+
+        :param parameters: [description]
+        :type parameters: dict
+        :param path: [description], defaults to direct_debit_create_url
+        :type path: str, optional
+        :return: [description]
+        :rtype: dict
+
+        Example of parameters:
+
+        parameters = {
+            "input_Amount": "10",
+            "input_Country": "TZN",
+            "input_Currency": "TZS",
+            "input_CustomerMSISDN": "000000000001",
+            "input_ServiceProviderCode": "000000",
+            "input_ThirdPartyConversationID": "AAA6d1f939c1005v2de053v4912jbasdj1j2kk",
+            "input_ThirdPartyReference": "5db410b459bd433ca8e5"
+        }
+        """
+
+        self.context.update({
+            'api_key': self.get_session_id(),
+            'method_type': APIMethodType.POST,
             'path': path,
             'parameters': {k: v for k, v in parameters.items()}
         })
