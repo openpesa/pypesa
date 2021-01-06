@@ -11,16 +11,6 @@ from .defaults import (MPESA_B2BPAYMENT_URL, MPESA_B2CPAYMENT_URL,
                        MPESA_REVERSAL_URL, MPESA_TRANSACTION_STATUS_URL)
 from .open_api import APIContext, APIMethodType, APIRequest
 
-BASE_URL = MPESA_BASE_URL
-get_session_url = MPESA_GET_SESSION_URL
-c2bPayment_url = MPESA_C2BPAYMENT_URL
-reversal_url = MPESA_REVERSAL_URL
-b2cPayment_url = MPESA_B2CPAYMENT_URL
-b2bPayment_url = MPESA_B2BPAYMENT_URL
-transaction_status_url = MPESA_TRANSACTION_STATUS_URL
-direct_debit_create_url = MPESA_DIRECT_DEBIT_CREATE_URL
-direct_debit_payment_url = MPESA_DIRECT_DEBIT_PAYMENT_URL
-
 
 class MPESA:
 
@@ -36,7 +26,7 @@ class MPESA:
         :type ssl: bool, optional
         """
         self.context = APIContext(
-            api_key, public_key, ssl=ssl, address=BASE_URL, port=443)
+            api_key, public_key, ssl=ssl, address=MPESA_BASE_URL, port=443)
         self.context.add_header('Origin', '*')
 
     def get_encrypted_api_key(self) -> str:
@@ -47,11 +37,11 @@ class MPESA:
         """
         return APIRequest(self.context).create_bearer_token()
 
-    def get_session_id(self, path: str = get_session_url) -> str:
+    def get_session_id(self, path: str = MPESA_GET_SESSION_URL) -> str:
         """A function to generate valid Session ID needed to transact on M-Pesa
         using OpenAPI.
 
-        :param path: url, defaults to get_session_url
+        :param path: url, defaults to MPESA_GET_SESSION_URL
         :type path: string, optional
         :raises Exception: When request fails, exception must be raised.
         :return: A valid Session ID
@@ -84,6 +74,7 @@ class MPESA:
         :rtype: dict
         """
         response = None
+
         try:
             response = APIRequest(context).execute()
         except Exception as e:
@@ -95,14 +86,14 @@ class MPESA:
             return response
 
     def customer2business(self, parameters: dict,
-                          path: str = c2bPayment_url) -> dict:
+                          path: str = MPESA_C2BPAYMENT_URL) -> dict:
         """A standard customer-to-business transaction
 
         :param parameters: A dictionary containing all necessary
         key value pairs.
         :type parameters: dict
         :param path: url for customer-to-business transaction,
-        defaults to c2bPayment_url
+        defaults to MPESA_C2BPAYMENT_URL
         :type path: str, optional
         :return: Response from API call.
         :rtype: dict
@@ -133,13 +124,14 @@ class MPESA:
         return response
 
     def reversal(self, reversal_parameters: dict,
-                 path: str = reversal_url) -> dict:
+                 path: str = MPESA_REVERSAL_URL) -> dict:
         """Reverse a successful transaction.
 
         :param reversal_parameters: A dictionary containing all the
         necessary information for reversing transaction.
         :type reversal_parameters: dict
-        :param path: url for reversing transaction, defaults to reversal_url
+        :param path: url for reversing transaction,
+        defaults to MPESA_REVERSAL_URL
         :type path: str, optional
         :return: Dictionary of reversed transaction when successful.
         :rtype: dict
@@ -166,13 +158,13 @@ class MPESA:
         return response
 
     def business2customer(self, parameters: dict,
-                          path: str = b2cPayment_url) -> dict:
+                          path: str = MPESA_B2CPAYMENT_URL) -> dict:
         """A standard customer-to-business transaction.
 
         :param parameters: Information required for successful transaction.
         :type parameters: dict
         :param path: url for business to customer payment,
-        defaults to b2cPayment_url
+        defaults to MPESA_B2CPAYMENT_URL
         :type path: str, optional
         :return: Response from API call.
         :rtype: dict
@@ -202,14 +194,14 @@ class MPESA:
         return response
 
     def business2business(self, parameters: dict,
-                          path: str = b2bPayment_url) -> dict:
+                          path: str = MPESA_B2BPAYMENT_URL) -> dict:
         """Business-to-business transactions (Single Stage).
 
         :param parameters: Information necessary for business-to-business
         transaction.
         :type parameters: dict
         :param path: url for business-to-business transaction,
-        defaults to b2bPayment_url
+        defaults to MPESA_B2BPAYMENT_URL
         :type path: str, optional
         :return: Response from API call.
         :rtype: dict
@@ -238,14 +230,14 @@ class MPESA:
         return response
 
     def status(self, parameters: dict,
-               path: str = transaction_status_url) -> dict:
+               path: str = MPESA_TRANSACTION_STATUS_URL) -> dict:
         """Query the status of the transaction that has been initiated.
 
         :param parameters: Information necessary for querying
         transaction status.
         :type parameters: dict
         :param path: url for querying transaction status,
-        defaults to transaction_status_url
+        defaults to MPESA_TRANSACTION_STATUS_URL
         :type path: str, optional
         :return: Response from API call.
         :rtype: dict
