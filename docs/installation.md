@@ -59,7 +59,7 @@ The project has various dependencies that need to be installed for it to functio
 
 > Make sure to activate virtual environment before installing dependencies.
 
-If default configurations are used, activate virtual enviroment using
+If default configurations are used, activate virtual environment using
 
 ```
 poetry shell
