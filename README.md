@@ -31,7 +31,7 @@ from pypesa.vodacom import MPESA
 - [x] Business to Business (B2B)
 - [x] Payment Reversal
 - [x] Transaction Status
-- [ ] Direct debit creation and Payment
+- [x] Direct debit creation and Payment
 
 ## Pre-requisites
 
