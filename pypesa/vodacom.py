@@ -262,7 +262,7 @@ class MPESA:
         return response
 
     def direct_debit_create(self, parameters: dict,
-                            path: str = direct_debit_create_url) -> dict:
+                            path: str = MPESA_DIRECT_DEBIT_CREATE_URL) -> dict:
         """[summary]
 
         :param parameters: [description]
@@ -299,7 +299,7 @@ class MPESA:
         return response
 
     def direct_debit_payment(self, parameters: dict,
-                             path: str = direct_debit_payment_url) -> dict:
+                             path: str = MPESA_DIRECT_DEBIT_PAYMENT_URL) -> dict:
         """[summary]
 
         :param parameters: [description]
