@@ -48,7 +48,7 @@ See more in [documentation](https://pypesa.readthedocs.io/en/latest/).
 
 ```python
 # vodacom M-PESA
-from mobile_payments.vodacom import MPESA
+from pypesa.vodacom import MPESA
 
 api_key = '<your-api-key>'
 public_key = '<open-api-public-key>'
