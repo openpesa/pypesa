@@ -55,7 +55,6 @@ class APIRequest:
         r = requests.post(self.context.get_url(),
                           headers=self.context.get_headers(),
                           json=self.context.get_parameters())
-        print(r)
         return APIResponse(r.status_code,
                            json.loads(r.headers.__str__().replace("'", '"')),
                            json.loads(r.text))
