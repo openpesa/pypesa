@@ -4,21 +4,24 @@ Python Pesa SDK
 
 ## Installation
 
-This package is available in [Python Package Index](https://pypi.org/project/pyppesa/) and can be installed using `pip`
+This package is available in [Python Package Index](https://pypi.org/project/pyppesa/) and can be installed using `pip`:
 
 ```
 pip install pypesa
 ```
 
-The package comprise both original open API codes and refactored codes.
+This package comprises interfaces for interacting with:
 
-To use original open API code import `open_api` module
+- M-PESA/Vodafone vis-a-vis a generic open API that can be used with [Daraja](https://developer.safaricom.co.ke/Documentation); and
+- Vodafone vis-a-vis the [Vodacom Open API portal](https://openapiportal.m-pesa.com/login).
+
+To use the generic API interface:
 
 ```
 from pypesa.open_api import APIContext, APIMethodType, APIRequest
 ```
 
-To use refactored code import `MPESA` from `vodacom` module.
+To use the `vodacom` module:
 
 ```
 from pypesa.vodacom import MPESA
@@ -35,12 +38,12 @@ from pypesa.vodacom import MPESA
 
 ## Pre-requisites
 
-The following are required and are obtained from [Vodacom Open Api portal](https://openapiportal.m-pesa.com/login)
+The following are required and are obtained from [Vodacom Open Api portal](https://openapiportal.m-pesa.com/login):
 
-- Api Key
+- API Key
 - Public Key
 
-See more in [documentation](https://pypesa.readthedocs.io/en/latest/).
+Read more [here](https://pypesa.readthedocs.io/en/latest/).
 
 ## Examples
 
@@ -50,10 +53,6 @@ See more in [documentation](https://pypesa.readthedocs.io/en/latest/).
 # vodacom M-PESA
 from pypesa.vodacom import MPESA
 
-api_key = '<your-api-key>'
-public_key = '<open-api-public-key>'
-
-m_pesa = MPESA(api_key=api_key, public_key=public_key)
 
 # Customer to Business payment
 parameters = {
@@ -67,10 +66,12 @@ parameters = {
     'input_PurchasedItemsDesc': 'Shoes',
 }
 
+m_pesa = MPESA(api_key='<your-api-key>',
+               public_key='<open-api-public-key>')
 response = m_pesa.customer2business(parameters)
 ```
 
-Check more examples of methods and responses in [docs](https://pypesa.readthedocs.io/en/latest/examples/)
+Check out more examples of methods and responses [here](https://pypesa.readthedocs.io/en/latest/examples/).
 
 ## Credits
 
